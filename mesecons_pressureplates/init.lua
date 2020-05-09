@@ -56,8 +56,7 @@ function mesecon.register_pressure_plate(basename, description, textures_off, te
 
 	mesecon.register_node(basename, {
 		drawtype = "nodebox",
-		inventory_image = image_i,
-		wield_image = image_w,
+
 		is_ground_content = false,
 		description = description,
 		pressureplate_basename = basename,
@@ -91,7 +90,8 @@ mesecon.register_pressure_plate(
 	"Wood Pressure Plate",
 	{"mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png"},
 	{"mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png"},
-	
+	"mesecons_wood_pressure_plate.png",
+	"mesecons_wood_pressure_plate.png",
 	{{"default:wood", "default:wood"}},
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
@@ -101,7 +101,8 @@ mesecon.register_pressure_plate(
 	"Stone Pressure Plate",
 	{"mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png"},
 	{"mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png"},
-
+    "mesecons_stone_pressure_plate.png",
+	"mesecons_stone_pressure_plate.png",
 	{{"default:cobble", "default:cobble"}},
 	{ cracky = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_stone_defaults())
@@ -111,7 +112,8 @@ mesecon.register_pressure_plate(
 	"Sandstone Pressure Plate",
 	{"mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png"},
 	{"mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png"},
-
+    "mesecons_sandstone_pressure_plate.png",
+	"mesecons_sandstone_pressure_plate.png",
 	{{"default:sandstone", "default:sandstone"}},
 	{ cracky = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_stone_defaults())
@@ -121,8 +123,9 @@ mesecon.register_pressure_plate(
 	"Desert Stone Pressure Plate",
 	{"mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png"},
 	{"mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png"},
-
-	{{"default:sandstone", "default:sandstone"}},
+    "mesecons_desert_stone_pressure_plate.png",
+	"mesecons_desert_stone_pressure_plate.png",
+	{{"default:desert_stone", "default:desert_stone"}},
 	{ cracky = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_stone_defaults())
 	
@@ -131,7 +134,8 @@ mesecon.register_pressure_plate(
 	"Acacia Pressure Plate",
 	{"mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png"},
 	{"mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png"},
-
+    "mesecons_acacia_pressure_plate.png",
+	"mesecons_acacia_pressure_plate.png",
 	{{"default:acacia_wood", "default:acacia_wood"}},
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
@@ -139,9 +143,10 @@ mesecon.register_pressure_plate(
 mesecon.register_pressure_plate(
 	"mesecons_pressureplates:pressure_plate_aspen",
 	"Aspen Pressure Plate",
+    	{"mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png"},
 	{"mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png"},
-	{"mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png"},
-
+    "mesecons_aspen_pressure_plate.png",
+	"mesecons_aspen_pressure_plate.png",
 	{{"default:aspen_wood", "default:aspen_wood"}},
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
@@ -151,7 +156,8 @@ mesecon.register_pressure_plate(
 	"Jungle Pressure Plate",
 	{"mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png"},
 	{"mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png"},
-
+    "mesecons_jungle_pressure_plate.png",
+	"mesecons_jungle_pressure_plate.png",
 	{{"default:junglewood", "default:junglewood"}},
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
@@ -161,8 +167,41 @@ mesecon.register_pressure_plate(
 	"Pine Pressure Plate",
 	{"mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png"},
 	{"mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png"},
-
+    "mesecons_pine_pressure_plate.png",
+    "mesecons_pine_pressure_plate.png",
 	{{"default:pine_wood", "default:pine_wood"}},
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
 
+mesecon.register_pressure_plate(
+	"mesecons_pressureplates:pressure_plate_gold",
+	"Gold Pressure Plate",
+	{"mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png"},
+	{"mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png"},
+    "mesecons_gold_pressure_plate.png",
+	"mesecons_gold_pressure_plate.png",
+	{{"default:gold_ingot", "default:gold_ingot"}},
+	{ cracky = 3, oddly_breakable_by_hand = 3 },
+	default.node_sound_stone_defaults())
+	
+mesecon.register_pressure_plate(
+	"mesecons_pressureplates:pressure_plate_diamond",
+	"Diamond Pressure Plate",
+	{"mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png"},
+	{"mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png"},
+    "mesecons_diamond_pressure_plate.png",
+	"mesecons_diamond_pressure_plate.png",
+	{{"default:diamond", "default:diamond"}},
+	{ cracky = 3, oddly_breakable_by_hand = 3 },
+	default.node_sound_stone_defaults())
+	
+mesecon.register_pressure_plate(
+	"mesecons_pressureplates:pressure_plate_iron",
+	"Iron Pressure Plate",
+	{"mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png"},
+	{"mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png"},
+    "mesecons_iron_pressure_plate.png",
+	"mesecons_iron_pressure_plate.png",
+	{{"technic:wrought_iron_ingot", "technic:wrought_iron_ingot"}},
+	{ cracky = 3, oddly_breakable_by_hand = 3 },
+	default.node_sound_stone_defaults())
