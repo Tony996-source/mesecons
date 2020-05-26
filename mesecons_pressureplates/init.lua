@@ -45,7 +45,7 @@ end
 -- groups:	groups
 -- sounds:	sound table
 
-function mesecon.register_pressure_plate(basename, description, textures_off, textures_on, image_w, image_i, recipe, groups, sounds)
+function mesecon.register_pressure_plate(basename, description, textures_off, textures_on, image_w, image_i, groups, sounds)
 	local groups_off, groups_on
 	if not groups then
 		groups = {}
@@ -79,129 +79,109 @@ function mesecon.register_pressure_plate(basename, description, textures_off, te
 		tiles = textures_on
 	})
 
-	minetest.register_craft({
-		output = basename .. "_off",
-		recipe = recipe,
-	})
 end
 
+local plate = {
+	{"acacia",       "Acacia"},
+    {"aspen",        "Aspen"},
+    {"jungle",       "Jungle"},
+    {"pine",         "Pine"},
+    {"wood",         "Wood"},
+    {"diamond",      "Diamond"},
+    {"gold",         "Gold"},
+    {"stone",        "Stone"},
+    {"sandstone",    "Sandstone"},
+    {"iron",         "Iron"},
+    {"desert_stone", "Desert_stone"},
+
+}
+
+for _, plate in pairs(plate) do
+
 mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_wood",
-	"Wood Pressure Plate",
-	{"mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png"},
-	{"mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png","mesecons_wood_pressure_plate.png"},
-	"mesecons_wood_pressure_plate.png",
-	"mesecons_wood_pressure_plate.png",
-	{{"default:wood", "default:wood"}},
+	"mesecons_pressureplates:pressure_plate_" .. plate[1],
+	plate[2] .. "Pressure Plate",
+	{"mesecons_".. plate[1] .. "_pressure_plate.png","mesecons_".. plate[1] .. "_pressure_plate.png","mesecons_".. plate[1] .. "_pressure_plate.png"},
+	{"mesecons_".. plate[1] .. "_pressure_plate.png","mesecons_".. plate[1] .. "_pressure_plate.png","mesecons_".. plate[1] .. "_pressure_plate.png"},
+	"mesecons_".. plate[1] .. "_pressure_plate.png",
+	"mesecons_".. plate[1] .. "_pressure_plate.png",
 	{ choppy = 3, oddly_breakable_by_hand = 3 },
 	default.node_sound_wood_defaults())
 
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_stone",
-	"Stone Pressure Plate",
-	{"mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png"},
-	{"mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png","mesecons_stone_pressure_plate.png"},
-    "mesecons_stone_pressure_plate.png",
-	"mesecons_stone_pressure_plate.png",
-	{{"default:cobble", "default:cobble"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_acacia_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:acacia_wood", "default:acacia_wood"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_sandstone",
-	"Sandstone Pressure Plate",
-	{"mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png"},
-	{"mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png","mesecons_sandstone_pressure_plate.png"},
-    "mesecons_sandstone_pressure_plate.png",
-	"mesecons_sandstone_pressure_plate.png",
-	{{"default:sandstone", "default:sandstone"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_aspen_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:aspen_wood", "default:aspen_wood"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_desert_stone",
-	"Desert Stone Pressure Plate",
-	{"mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png"},
-	{"mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png","mesecons_desert_stone_pressure_plate.png"},
-    "mesecons_desert_stone_pressure_plate.png",
-	"mesecons_desert_stone_pressure_plate.png",
-	{{"default:desert_stone", "default:desert_stone"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_jungle_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:junglewood", "default:junglewood"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_acacia",
-	"Acacia Pressure Plate",
-	{"mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png"},
-	{"mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png","mesecons_acacia_pressure_plate.png"},
-    "mesecons_acacia_pressure_plate.png",
-	"mesecons_acacia_pressure_plate.png",
-	{{"default:acacia_wood", "default:acacia_wood"}},
-	{ choppy = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_wood_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_pine_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:pine_wood", "default:pine_wood"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_aspen",
-	"Aspen Pressure Plate",
-    	{"mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png"},
-	{"mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png","mesecons_aspen_pressure_plate.png"},
-    "mesecons_aspen_pressure_plate.png",
-	"mesecons_aspen_pressure_plate.png",
-	{{"default:aspen_wood", "default:aspen_wood"}},
-	{ choppy = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_wood_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_wood_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:wood", "default:wood"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_jungle",
-	"Jungle Pressure Plate",
-	{"mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png"},
-	{"mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png","mesecons_jungle_pressure_plate.png"},
-    "mesecons_jungle_pressure_plate.png",
-	"mesecons_jungle_pressure_plate.png",
-	{{"default:junglewood", "default:junglewood"}},
-	{ choppy = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_wood_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_diamond_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:diamond", "default:diamond"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_pine",
-	"Pine Pressure Plate",
-	{"mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png"},
-	{"mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png","mesecons_pine_pressure_plate.png"},
-    "mesecons_pine_pressure_plate.png",
-    "mesecons_pine_pressure_plate.png",
-	{{"default:pine_wood", "default:pine_wood"}},
-	{ choppy = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_wood_defaults())
-
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_gold",
-	"Gold Pressure Plate",
-	{"mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png"},
-	{"mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png","mesecons_gold_pressure_plate.png"},
-    "mesecons_gold_pressure_plate.png",
-	"mesecons_gold_pressure_plate.png",
-	{{"default:gold_ingot", "default:gold_ingot"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_gold_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:gold_ingot", "default:gold_ingot"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_diamond",
-	"Diamond Pressure Plate",
-	{"mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png"},
-	{"mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png","mesecons_diamond_pressure_plate.png"},
-    "mesecons_diamond_pressure_plate.png",
-	"mesecons_diamond_pressure_plate.png",
-	{{"default:diamond", "default:diamond"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_stone_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:stone", "default:stone"},
+		}
+	})
 	
-mesecon.register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_iron",
-	"Iron Pressure Plate",
-	{"mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png"},
-	{"mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png","mesecons_iron_pressure_plate.png"},
-    "mesecons_iron_pressure_plate.png",
-	"mesecons_iron_pressure_plate.png",
-	{{"technic:wrought_iron_ingot", "technic:wrought_iron_ingot"}},
-	{ cracky = 3, oddly_breakable_by_hand = 3 },
-	default.node_sound_stone_defaults())
+    minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_sandstone_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:sandstone", "default:sandstone"},
+		}
+	})
+	
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_iron_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "technic:wrought_iron_ingot", "technic:wrought_iron_ingot"},
+		}
+	})
+	
+	minetest.register_craft({
+		output = "mesecons_pressureplates:pressure_plate_desert_stone_off 2",
+		recipe = {
+			{"group:mesecon_conductor_craftable", "default:desert_sandstone", "default:desert_sandstone"},
+		}
+	})
+end
