@@ -4,8 +4,8 @@
 mesecon.register_node("mesecons_walllever:wall_lever", {
 	description="Lever",
 	drawtype = "mesh",
-	inventory_image = "jeija_wall_lever_inv.png",
-	wield_image = "jeija_wall_lever_inv.png",
+	inventory_image = "jeija_wall_lever.png",
+	wield_image = "jeija_wall_lever.png",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
@@ -13,7 +13,7 @@ mesecon.register_node("mesecons_walllever:wall_lever", {
 	walkable = false,
 	selection_box = {
 		type = "fixed",
-		fixed = { -8/16, -8/16, 3/16, 8/16, 8/16, 8/16 },
+		fixed = { -3/16, -4/16, 2/16, 3/16, 4/16, 8/16 },
 	},
 	sounds = default.node_sound_wood_defaults(),
 	on_rightclick = function (pos, node)
@@ -26,10 +26,7 @@ mesecon.register_node("mesecons_walllever:wall_lever", {
 	end
 },{
 	tiles = {
-		"jeija_wall_lever_lever_light_off.png",
-		"jeija_wall_lever_front.png",
-		"jeija_wall_lever_front_bump.png",
-		"jeija_wall_lever_back_edges.png"
+		"jeija_wall_lever_lever_light_on.png",
 	},
 	mesh="jeija_wall_lever_off.obj",
 	on_rotate = mesecon.buttonlike_onrotate,
@@ -41,9 +38,6 @@ mesecon.register_node("mesecons_walllever:wall_lever", {
 },{
 	tiles = {
 		"jeija_wall_lever_lever_light_on.png",
-		"jeija_wall_lever_front.png",
-		"jeija_wall_lever_front_bump.png",
-		"jeija_wall_lever_back_edges.png"
 	},
 	mesh="jeija_wall_lever_on.obj",
 	on_rotate = false,
